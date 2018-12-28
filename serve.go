@@ -1,5 +1,7 @@
 package main
 
+// Simple Go program to preview the site locally before publishing.
+
 import (
 	"log"
 	"net/http"
