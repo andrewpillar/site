@@ -1,0 +1,9 @@
+{{range $i, $p := .Posts}}
+	<div class="post">
+		<div class="header">
+			<h3><a class="title" href="{{$p.Href}}">{{$p.Title}}</a></h3>
+			<div class="created-at">{{$p.CreatedAt.Format "Mon 2 Jan 2006"}}</div>
+		</div>
+		<div class="markdown">{{$p.Preview}}</div>
+	</div>
+{{end}}

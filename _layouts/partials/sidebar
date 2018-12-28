@@ -1,0 +1,15 @@
+<div class="sidebar">
+	<ul>
+		<li><strong>Links</strong></li>
+		{{range $i, $p := .Pages}}
+			<li><a href="{{$p.Href}}">{{$p.Title}}</a></li>
+		{{end}}
+		<li><a href="https://github.com/andrewpillar">GitHub</a></li>
+	</ul>
+	{{if .Categories}}
+		<ul class="categories">
+			<li><strong>Categories</strong></li>
+			{{printCategories .Categories}}
+		</ul>
+	{{end}}
+</div>

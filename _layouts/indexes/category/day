@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{.Title}}</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+	</head>
+	<body>
+		<div class="wrap">
+			{{partial "partials/sidebar" .}}
+			<div class="content">
+				<div class="header"><h1><a href="/">~</a> $ {{.Category.Name}} - Posts from {{.Time.Format "Mon 2 Jan 2006"}}</h1></div>
+				{{partial "partials/posts" .}}
+			</div>
+		</div>
+	</body>
+</html>

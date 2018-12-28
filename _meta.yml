@@ -1,0 +1,20 @@
+title: andrew pillar
+editor: vim
+theme: tty
+style: solarized-light
+default: site
+indexLayouts:
+  index: indexes/index
+  day: indexes/day
+  month: indexes/month
+  year: indexes/year
+  category:
+    index: indexes/category/index
+    day: indexes/category/day
+    month: indexes/category/month
+    year: indexes/category/year
+remotes:
+  site:
+    target: me@andrewpillar.com:/var/www/andrewpillar.com
+    port: 22
+    identity: ""

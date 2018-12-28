@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{.Page.Title}} - {{.Title}}</title>
+		<link rel="stylesheet" href="/assets/css/main.css">
+	</head>
+	<body>
+		<div class="wrap">
+			{{partial "partials/sidebar" .}}
+			<div class="content">
+				<div class="header"><h1><a href="/">~</a> $ {{.Page.Title}}</h1></div>
+				<div class="markdown">{{.Page.Body}}</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+minify() {
+	dir="$1"
+
+	pushd $dir > /dev/null
+
+	[ ! -d .tmp ] && mkdir .tmp
+
+	for f in $(ls); do
+		if [ -f $f ]; then
+			cp $f .tmp/$f
+
+			cat .tmp/$f | tr -d '\n' | tr -d '\t' | sed -E "s/\{2,}//g" > $f
+			continue
+		fi
+
+		if [ -d $f ]; then
+			minify $f
+		fi
+	done
+
+	popd > /dev/null
+}
+
+minify _layouts

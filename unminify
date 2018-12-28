@@ -1,0 +1,24 @@
+#!/bin/bash
+
+unminify() {
+	dir="$1"
+
+	pushd $dir > /dev/null
+
+	for f in $(ls); do
+		if [ -f $f ]; then
+			cp .tmp/$f $f
+			continue
+		fi
+
+		if [ -d $f ]; then
+			unminify $f
+		fi
+	done
+
+	rm -r .tmp/
+
+	popd > /dev/null
+}
+
+unminify _layouts
