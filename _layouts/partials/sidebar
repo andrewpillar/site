@@ -1,15 +1,24 @@
+{{define "categories"}}
+	{{range .}}
+		<li><a href="{{.Href}}">{{.Name}}</a>
+		{{if .Categories}}
+			<ul>{{template "categories" .Categories}}</ul>
+		{{end}}
+		</li>
+	{{end}}
+{{end}}
 <div class="sidebar">
 	<ul>
 		<li><strong>Links</strong></li>
-		{{range $i, $p := .Pages}}
+		{{range $i, $p := .Site.Pages}}
 			<li><a href="{{$p.Href}}">{{$p.Title}}</a></li>
 		{{end}}
 		<li><a href="https://github.com/andrewpillar">GitHub</a></li>
 	</ul>
-	{{if .Categories}}
+	{{if .Site.Categories}}
 		<ul class="categories">
 			<li><strong>Categories</strong></li>
-			{{printCategories .Categories}}
+			{{template "categories" .Site.Categories}}
 		</ul>
 	{{end}}
 </div>

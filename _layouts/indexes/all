@@ -2,14 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>{{.Title}}</title>
+		<title>{{.Site.Title}}</title>
 		<link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 	</head>
 	<body>
 		<div class="wrap">
 			{{partial "partials/sidebar" .}}
 			<div class="content">
-				<div class="header"><h1><a href="/">~</a> $ {{.Title}}</h1></div>
+				<div class="header"><h1><a href="/">~</a> $ {{.Site.Title}}</h1></div>
 				{{partial "partials/posts" .}}
 			</div>
 		</div>

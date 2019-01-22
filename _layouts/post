@@ -2,8 +2,9 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>{{.Post.Title}} - {{.Title}}</title>
+		<title>{{.Post.Title}} - {{.Site.Title}}</title>
 		<link rel="stylesheet" href="/assets/css/main.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
 	</head>
 	<body>
 		<div class="wrap">
@@ -11,7 +12,7 @@
 			<div class="content">
 				<div class="header">
 					<h1><a href="/">~</a> $ {{.Post.Title}}</h1>
-					<h3>Posted on {{.Post.CreatedAt.Format "Mon 2 2006"}}{{if .Post.HasCategory}} to <a href="{{.Post.Category.Href}}">{{.Post.Category.Name}}</a>{{else}} to <a href="/">{{.Title}}</a>{{end}}</h3>
+					<h3>Posted on {{.Post.CreatedAt.Format "Mon 2 2006"}}{{if .Post.HasCategory}} to <a href="{{.Post.Category.Href}}">{{.Post.Category.Name}}</a>{{else}} to <a href="/">{{.Site.Title}}</a>{{end}}</h3>
 					{{if ne .Post.CreatedAt.Unix .Post.UpdatedAt.Unix}}
 					<h4>Updated at {{.Post.UpdatedAt.Format "15:04 on Mon 2 Jan 2006"}}</h4>
 					{{end}}

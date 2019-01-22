@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/sh
 
 ./minify
-jrnl publish "$@"
+jrnl publish $@
 ./unminify
