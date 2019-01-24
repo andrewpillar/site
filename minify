@@ -1,9 +1,7 @@
 #!/bin/sh
 
 minify() {
-	dir="$1"
-
-	pushd $dir > /dev/null
+	cd "$1"
 
 	[ ! -d .tmp ] && mkdir .tmp
 
@@ -20,7 +18,7 @@ minify() {
 		fi
 	done
 
-	popd > /dev/null
+	cd -
 }
 
 minify _layouts
