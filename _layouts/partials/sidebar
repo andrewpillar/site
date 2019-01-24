@@ -9,6 +9,11 @@
 {{end}}
 <div class="sidebar">
 	<ul>
+		<li><strong>Feeds</strong></li>
+		<li><a href="/atom.xml">Atom</a></li>
+		<li><a href="/rss.xml">RSS</a></li>
+	</ul>
+	<ul>
 		<li><strong>Links</strong></li>
 		{{range $i, $p := .Site.Pages}}
 			<li><a href="{{$p.Href}}">{{$p.Title}}</a></li>
