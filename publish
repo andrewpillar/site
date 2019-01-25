@@ -1,5 +1,5 @@
 #!/bin/sh
 
 ./minify
-jrnl publish $@
+jrnl publish -r _site/rss.xml -a _site/atom.xml $@
 ./unminify
