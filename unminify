@@ -8,10 +8,6 @@ unminify() {
 			cp .tmp/$f $f
 			continue
 		fi
-
-		if [ -d $f ]; then
-			unminify $f
-		fi
 	done
 
 	rm -r .tmp/
@@ -20,3 +16,6 @@ unminify() {
 }
 
 unminify _layouts
+unminify _layouts/indexes
+unminify _layouts/indexes/category
+unminify _layouts/partials
