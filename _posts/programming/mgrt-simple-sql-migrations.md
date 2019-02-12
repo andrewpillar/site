@@ -3,7 +3,7 @@ title: 'mgrt: Simple SQL migrations'
 index: true
 layout: post
 createdAt: 2019-01-27T22:40
-updatedAt: 2019-01-27T22:40
+updatedAt: 2019-02-12T21:12
 ---
 As mentioned in my previous [post](/2019/01/24/an-update), I have been working on a tool for handling SQL migrations. Well, that tool is now ready to debut, and is called [mgrt](https://github.com/andrewpillar/mgrt). Much like [jrnl](https://github.com/andrewpillar/jrnl), I decided to take the Welsh approach when it can to naming it.
 
@@ -13,10 +13,10 @@ The usage of mgrt is straight forward, and somewhat similar to [jrnl](https://gi
 
 ```
 $ mgrt init
-$ mgrt add -c "Create users table"
+$ mgrt add -m "Create users table"
 ```
 
-Once initialized we can add revisions with `mgrt add`, the `-c` flag is optional, and it there for providing a descriptive comment about the revision. When we have a new revision added we can write up the necessary SQL.
+Once initialized we can add revisions with `mgrt add`, the `-m` flag is optional, and it there for providing a descriptive message about the revision. When we have a new revision added we can write up the necessary SQL.
 
 ```sql
 -- mgrt: revision: 1136214245: Create users table
