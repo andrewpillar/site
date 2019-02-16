@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
 		<title>{{.Post.Title}} - {{.Site.Title}}</title>
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<link rel="stylesheet" href="/assets/css/style.css">
 	</head>
 	<body>
 		<div class="wrap">
-			{{partial "partials/sidebar" .}}
 			<div class="content">
 				<div class="header">
 					<h1><a href="/">~</a> $ {{.Post.Title}}</h1>
@@ -19,6 +19,7 @@
 				</div>
 				<div class="markdown">{{.Post.Body}}</div>
 			</div>
+			{{partial "partials/sidebar" .}}
 		</div>
 	</body>
 </html>
