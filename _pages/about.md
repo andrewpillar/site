@@ -4,4 +4,4 @@ layout: page
 ---
 I build things to learn and use.
 
-Contact: <a href="mailto:andrewjohnpillar@gmail.com">andrewjohnpillar@gmail.com</a>
+Contact: <a href="mailto:me@andrewpillar.com">me@andrewpillar.com</a>
