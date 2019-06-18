@@ -3,6 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<meta name="og:url" content="{{.Post.Href}}">
+		<meta name="og:title" content="{{.Post.Title}}">
+		<meta name="og:description" content="{{.Post.Preview}}">
+		<meta name="og:image" content="/avatar.jpg">
 		<title>{{.Post.Title}} - {{.Site.Title}}</title>
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<link rel="stylesheet" href="/assets/css/style.css">
