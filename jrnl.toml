@@ -1,0 +1,12 @@
+
+[author]
+  email = "me@andrewpillar.com"
+  name = "Andrew Pillar"
+
+[site]
+  blogroll = []
+  description = ""
+  link = "https://andrewpillar.com"
+  remote = "me@andrewpillar.com:/var/www/andrewpillar.com"
+  theme = "tty"
+  title = "andrew pillar"
