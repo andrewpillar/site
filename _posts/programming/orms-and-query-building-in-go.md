@@ -132,7 +132,7 @@ if err != nil {
 err := db.Select(&posts, query, args...)
 ```
 
-This is slightly better than what we had with GORM, and miles better than the string concatenation we were doing befroe. However, it still comes across as slightly cumbersone to write. [squirrel](https://github.com/masterminds/squirrel) uses option structs for some of the clauses in an SQL query. Optional structs are common pattern in Go for APIs that aim to be highly configurable.
+This is slightly better than what we had with GORM, and miles better than the string concatenation we were doing before. However, it still comes across as slightly cumbersone to write. [squirrel](https://github.com/masterminds/squirrel) uses option structs for some of the clauses in an SQL query. Optional structs are common pattern in Go for APIs that aim to be highly configurable.
 
 An API for query building in Go should fulfill both of these needs:
 
