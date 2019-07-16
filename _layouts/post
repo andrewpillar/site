@@ -7,6 +7,8 @@
 		<meta name="og:title" content="{{.Post.Title}}">
 		<meta name="og:description" content="{{.Post.Preview | strip}}">
 		<meta name="og:image" content="{{.Site.Link}}/avatar.jpg">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@_andrewpillar">
 		<title>{{.Post.Title}} - {{.Site.Title}}</title>
 		<link rel="stylesheet" href="/assets/css/main.css">
 		<link rel="stylesheet" href="/assets/css/style.css">
