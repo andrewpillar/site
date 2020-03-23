@@ -1,11 +1,18 @@
 ---
 title: ORMs and Query Building in Go
-index: true
 layout: post
+index: true
 createdAt: 2019-07-13T10:12
-updatedAt: 2019-07-13T10:12
+updatedAt: 2020-03-23T22:30
 ---
-Recently, I have been looking into various solutions for interacting with databases with ease in Go. My go to library for database work in Go is [sqlx](https://github.com/jmoiron/sqlx), this makes unmarshalling the data from the database into structs a cinch. You write out your SQL query, tag your structs using the `db` tag, and let [sqlx](https://github.com/jmoiron/sqlx) handle the rest. However, the main problem I have encountered, was with idiomatic query building. This led me to investigate this problem, and jot down some of my thoughts in this post.
+Recently, I have been looking into various solutions for interacting with
+databases with ease in Go. My go to library for database work in Go is
+[sqlx](https://github.com/jmoiron/sqlx), this makes unmarshalling the data from
+the database into structs a cinch. You write out your SQL query, tag your
+structs using the `db` tag, and let [sqlx](https://github.com/jmoiron/sqlx)
+handle the rest. However, the main problem I have encountered, was with
+idiomatic query building. This led me to investigate this problem, and jot down
+some of my thoughts in this post.
 
 **TL;DR** First class functions are an idiomatic way of doing SQL query building
 in Go. Check out the repository containing some example code I wrote testing
@@ -452,4 +459,5 @@ query builder would need, it's lacking `JOIN`, for example and supports only
 the Postgres bindvar.
 
 If you have any disagreements with what I have said in this post, or would like
-to discuss this further, then please reach out to me at <a href="mailto:me@andrewpillar.com">me@andrewpillar.com</a>.
+to discuss this further, then please reach out to me at
+<a href="mailto:me@andrewpillar.com">me@andrewpillar.com</a>.
