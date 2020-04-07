@@ -8,7 +8,7 @@ updatedAt: 2020-04-07T18:33
 In my [last post](/programming/2019/07/13/orms-and-query-building-in-go) I
 touched on the idea of using query builders for building up somewhat complex
 SQL queries in Go. Well, in this post I'd like to go further, and explore how
-this can be used to idiomatically build out a simple system for modeling
+this can be used to idiomatically build out a simple system for modelling
 relationships in Go. This post going forward will assume that you have read the
 aforementioned post.
 
@@ -34,7 +34,7 @@ of said posts.
 
 First I'd like to cover some terminology that I will be using throughout this
 article. This isn't official terminology or anything, but terms that I like to
-use to aid in descrbing the different components of modeling the data.
+use to aid in describing the different components of modelling the data.
 
 * Entity - an independent type that is bespoke to the system
 * Store - something that returns models form the database
@@ -75,7 +75,7 @@ and the `/posts` route will support the `search`, `page`, and `tag` query
 parameters.
 
 Nothing too strenuous so far, so let's move onto the next step and start
-modeling our would be blogging application in Go.
+modelling our would be blogging application in Go.
 
 ## The Initial Models {#the-initial-models}
 
@@ -150,7 +150,7 @@ between our current disparate models.
 ## Abstracting Commonalities {#abstracting-commonalities}
 
 What things do our models have in common with each other? Well for one they
-have primary keys as denoted by the `ID` field, and they also have arbitary
+have primary keys as denoted by the `ID` field, and they also have arbitrary
 column values too.
 
 With this in mind let's begin defining a simple `Model` interface that can 
@@ -391,7 +391,7 @@ We have the handler for `/categories` done, now let's implement
     }
 
 Not as simple as `Index`, but get's the job done. To finish, let's implement a
-funcion to register the routes.
+function to register the routes.
 
     // category/handler.go
     import (
@@ -501,7 +501,7 @@ Simple enough, we check to see if the given `pattern` is a zero-value, if it is
 then we do nothing. Otherwise, we return a `WHERE LIKE` clause via a call to
 `query.Where` passing it the query.
 
-No let's implement the `bind.WhereTag` function,
+Now let's implement the `bind.WhereTag` function,
 
     // build/tag.go
     ...
