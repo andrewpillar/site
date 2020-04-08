@@ -37,7 +37,7 @@ article. This isn't official terminology or anything, but terms that I like to
 use to aid in describing the different components of modelling the data.
 
 * Entity - an independent type that is bespoke to the system
-* Store - something that returns models form the database
+* Store - something that returns models from the database
 * Model - a representation of an Entity's data that was either taken from the
 database, or will be put in the database
 
@@ -69,7 +69,7 @@ application,
 
 >**Note:** we're primarily focussed on readonly routes right now.
 
-where '/categories', and `/posts` return a list of the respective entities.
+where `/categories`, and `/posts` return a list of the respective entities.
 The `/categories` route will support the `search` and `page` query parameters,
 and the `/posts` route will support the `search`, `page`, and `tag` query
 parameters.
