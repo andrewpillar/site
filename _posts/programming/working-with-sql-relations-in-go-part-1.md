@@ -41,7 +41,7 @@ use to aid in describing the different components of modelling the data.
 * Model - a representation of an Entity's data that was either taken from the
 database, or will be put in the database
 
-This article will be covering a lot, and will be provding lot's of code
+This article will be covering a lot, and will be providing lot's of code
 examples, all of which will be elided (denoted via `...`) for brevity.
 
 ## Setting the Stage {#setting-the-stage}
@@ -319,7 +319,7 @@ So let's implement stores specific for these entities.
     func (s Store) Get(opts ...query.Option) (*Post, error) {
         p := &Post{}
 
-        err := s.Store.Get(c, table, opts...)
+        err := s.Store.Get(p, table, opts...)
         return p, err
     }
 
@@ -359,7 +359,7 @@ too special.
             // handle error
         }
 
-        w.header().set("content-type", "application/json; charset=utf-8")
+        w.Header().Set("Content-Type", "application/json; charset=utf-8")
         json.NewEncoder(w).Encode(cc)
     }
 
@@ -386,7 +386,7 @@ We have the handler for `/categories` done, now let's implement
             // handle error
         }
 
-        w.header().set("content-type", "application/json; charset=utf-8")
+        w.Header().Set("Content-Type", "application/json; charset=utf-8")
         json.NewEncoder(w).Encode(c)
     }
 
@@ -440,7 +440,7 @@ routes.
             // handle error
         }
 
-        w.header().set("content-type", "application/json; charset=utf-8")
+        w.Header().Set("Content-Type", "application/json; charset=utf-8")
         json.NewEncoder(w).Encode(pp)
     }
 
@@ -451,8 +451,14 @@ routes.
             // handle error
         }
 
-        w.header().set("content-type", "application/json; charset=utf-8")
-        json.NewEncoder(w).Encode(pp)
+        p, err := h.Store.Get(query.Where("id", "=", id))
+
+        if err != nil {
+            // handle error
+        }
+
+        w.Header().Set("Content-Type", "application/json; charset=utf-8")
+        json.NewEncoder(w).Encode(p)
     }
 
     func RegisterRoutes(db *sqlx.DB, r *mux.Router) {
